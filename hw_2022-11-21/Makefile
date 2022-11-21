@@ -13,6 +13,6 @@ prog2.o : prog2.c
 prog1 : prog1.o
 	$(C) $(LDFLAGS) prog1.o -o prog1
 prog2 : prog2.o
-	$(C) $(LDFLAGC) prog2.o -o prog2
+	$(C) $(LDFLAGS) prog2.o -o prog2
 clean :
 	rm -f *.o prog1 prog2
