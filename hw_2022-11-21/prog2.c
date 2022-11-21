@@ -17,10 +17,10 @@ int main(int argc, char* argv[]) {
   int status;
   wait(&status);
   if(WIFSIGNALED(status) == 1) {
-    printf("Signaled: %d\n", WEXITSTATUS(status));
+    printf("Signaled: %d\n", WTERMSIG(status));
   }
   if(WIFEXITED(status) == 1) {
-    printf("Exited: %d\n", WTERMSIG(status));
+    printf("Exited: %d\n", WEXITSTATUS(status));
   }
   return 0;
 }
