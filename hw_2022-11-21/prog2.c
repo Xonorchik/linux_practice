@@ -16,10 +16,10 @@ int main(int argc, char* argv[]) {
   kill(pid, n);
   int status;
   wait(&status);
-  if(WIFSIGNALED(status) == 1) {
+  if(WIFSIGNALED(status)) {
     printf("Signaled: %d\n", WTERMSIG(status));
   }
-  if(WIFEXITED(status) == 1) {
+  if(WIFEXITED(status)) {
     printf("Exited: %d\n", WEXITSTATUS(status));
   }
   return 0;
