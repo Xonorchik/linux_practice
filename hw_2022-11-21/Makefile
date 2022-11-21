@@ -1,4 +1,4 @@
-OBJS = prog1.o prog2.o
+OBJS = prog1 prog2
 C = gcc
 DEBUG = -g
 CFLAGS = -Wall -Werror -Wno-unused-result -c $(DEBUG)
@@ -11,9 +11,8 @@ prog1.o : prog1.c
 prog2.o : prog2.c
 	$(C) $(CFLAGS) prog2.c -o $@
 prog1 : prog1.o
-	$(C) prog1.o -o prog1
+	$(C) $(LDFLAGS) prog1.o -o prog1
 prog2 : prog2.o
-	$(C) prog2.o -o prog2
-
+	$(C) $(LDFLAGC) prog2.o -o prog2
 clean :
-	rm -f *.o *~ str
+	rm -f *.o prog1 prog2
