@@ -32,4 +32,5 @@ int main(int argc, char *argv[]) {
 void sighandler(int signum) {
 	printf("\n");
 	--M;
+	exit(signum);
 }
